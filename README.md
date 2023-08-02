@@ -23,8 +23,11 @@ finally we will return the data.
 
 ## Features
 1: get movie by release date
+
 2: get movie by name (you do not need to enter the full name, even with some alphabets it will work)
+
 3: get movie by length (in some cases where the entered length is not found in the DB we return all movies with higher length)
+
 4: get random movies order by number of movies which user will request
 5:
 
