@@ -2,7 +2,7 @@
 
 📹 this is a movie generator app, which would help you to find your proper movie!
 
-## What I used  
+## What I used 🍃 
 
  java 17,
  maven as a build tool (3.8.1 v)
@@ -10,7 +10,7 @@
  spring mvc
  spring data JPA
 
- ## Explain the  Architecture
+ ## Explain the  Architecture 🍃 
 💡 Every microservice will register into the Eureka server and Eureka server
  knows all the client applications running on each port and IP address.
 
@@ -23,7 +23,7 @@ finally we will return the data.
 
 💡the user DB is seperated from movies DB
 
-## Features   
+## Features 🍃 
 1: get movie by release date🌟
 
 2: get movie by name (you do not need to enter the full name, even with some alphabets it will work)🌟
