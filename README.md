@@ -48,4 +48,8 @@ finally we will return the data.
 
 12: get top reviews and ratings for a movie(eg: user entered "The Truman Show" and he wants to get top 3(or any other num) reviews gor that movie)🌟 
 
- 
+##upcoming features
+
+🖋 i will add spring security and docker
+
+
