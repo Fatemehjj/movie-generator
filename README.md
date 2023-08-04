@@ -5,9 +5,13 @@
 ## What I used 🍃 
 
  java 17,
+ 
  maven as a build tool (3.8.1 v)
+ 
  spring boot as my framework (3.1.2 v)
+ 
  spring mvc
+ 
  spring data JPA
 
  ## Explain the  Architecture 🍃 
