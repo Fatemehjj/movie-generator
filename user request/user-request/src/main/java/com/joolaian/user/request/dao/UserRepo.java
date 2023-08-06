@@ -11,6 +11,6 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
    @Query(value = "SELECT * FROM user q WHERE q.title LIKE (%:title%) ", nativeQuery = true)
    List<User> findByTitle(String title);
-   @Query(value = "SELECT * FROM user q WHERE q.title= :title ORDER BY q.rating DESC LIMIT :range", nativeQuery = true)
+   @Query(value = "SELECT * FROM user q WHERE q.title LIKE (%:title%) ORDER BY q.rating DESC LIMIT :range", nativeQuery = true)
    List<User> findTopReviews(int range, String title);
 }
