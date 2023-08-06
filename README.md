@@ -1,18 +1,20 @@
 # movie-generator-with-microservices
-
+it doesnt support all requirements for microservices
 📹 this is a movie generator app, which would help you to find your proper movie!
 
 ## What I used 🍃 
 
- java 17,
+ java 17
  
  maven as a build tool (3.8.1 v)
  
  spring boot as my framework (3.1.2 v)
  
- spring mvc
+  MVC design pattern
  
  spring data JPA
+
+ MySQL as my DB
 
  ## Explain the  Architecture 🍃 
 💡 Every microservice will be registered into the Eureka server and Eureka server
