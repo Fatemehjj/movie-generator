@@ -7,5 +7,5 @@ public class Movies {
     private String category;
     private int length;
     private double imdb;
-    private int release_date; //the names should be same as the table in other microservice
+    private int date; //the names should be same as the table in other microservice
 }
