@@ -73,7 +73,7 @@ public class MovieService {
     }
     public ResponseEntity<List<Movies>> findByReleaseDate(int date) {
         try {
-            return new ResponseEntity<>(repo.findByReleaseDate(date), HttpStatus.OK);
+            return new ResponseEntity<>(repo.findByDate(date), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
         }

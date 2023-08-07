@@ -20,5 +20,5 @@ public interface MoviesRepo extends JpaRepository<Movies, Integer> {
     List<Movies> findByLengthAndHigher(int len);
     @Query(value = "SELECT * FROM movies q WHERE q.movie_name LIKE (%:name%)", nativeQuery = true)
     List<Movies> findByConsistingName(String name);
-    List<Movies> findByReleaseDate(int date);
+    List<Movies> findByDate(int date);
 }

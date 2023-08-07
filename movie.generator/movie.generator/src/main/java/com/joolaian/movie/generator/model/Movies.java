@@ -16,5 +16,5 @@ public class Movies {
     private int length;
     private double imdb;
     @Column(name = "release_date")
-    private int releaseDate;
+    private int date;
 }
