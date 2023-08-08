@@ -163,4 +163,13 @@ public class UserService {
          }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    public ResponseEntity<List<Movies>> findAllMovies() {
+        try {
+            return connection.getAllMovies();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }

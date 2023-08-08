@@ -61,4 +61,8 @@ public class UserController {
     public ResponseEntity<List<UserDto>> getTopReviews(@PathVariable int range, @PathVariable String title){
         return service.findTopReviews(range, title);
     }
+    @GetMapping("all")
+    public ResponseEntity<List<Movies>> getAllMovies(){
+     return service.findAllMovies();
+    }
 }

@@ -24,4 +24,6 @@ public interface UserConnection {
     public ResponseEntity<List<Movies>> getByName(@PathVariable String name);
     @GetMapping("movie/release/{date}")
     public ResponseEntity<List<Movies>> getByReleaseDate(@PathVariable int date);
+    @GetMapping("movie/all")
+    public ResponseEntity<List<Movies>> getAllMovies();
 }
