@@ -24,17 +24,60 @@ public class MovieService {
     }
     public ResponseEntity<List<Movies>> findByScale(double imdb, int numOfQues) {
         try {
-            return new ResponseEntity<>(repo.findByScaleAndLimitedByN(imdb, numOfQues), HttpStatus.OK);
+            List<Movies> fitWithImdb = repo.findByScaleAndLimitedByN(imdb, numOfQues);
+            List<Movies> higherImdb = repo.findByHigherScaleAndLimitedByN(imdb, numOfQues);
+
+            if (fitWithImdb.size()==numOfQues) {return new ResponseEntity<>(fitWithImdb, HttpStatus.OK);}
+            else if (fitWithImdb.size()!=0 && fitWithImdb.size()<numOfQues) {
+                List<Movies> allMovies = new ArrayList<>();
+                int numberOfFitMovies = fitWithImdb.size();
+
+                for (Movies movies : fitWithImdb){
+                    allMovies.add(movies);
+                }
+                int numberOfHigherImdb = numOfQues-numberOfFitMovies;
+                    for (Movies movies : higherImdb){
+                        if (numberOfHigherImdb!=0) {
+                            allMovies.add(movies);
+                            --numberOfHigherImdb;
+                        }
+                    }
+               return new ResponseEntity<>(allMovies, HttpStatus.OK);
+            }
+            else {
+                return new ResponseEntity<>(higherImdb, HttpStatus.OK);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
     public ResponseEntity<List<Movies>> findByScaleAndCategory(String category, double imdb, int numOfQues) {
-
         try {
-            return new ResponseEntity<>(repo.findByScaleAndCategory(category, imdb, numOfQues), HttpStatus.OK);
-        } catch (Exception e) {
+            List<Movies> fitWithImdb = repo.findByScaleAndCategory(category,imdb, numOfQues);
+            List<Movies> higherImdb = repo.findByHigherScaleAndCategory(category,imdb, numOfQues);
+
+            if (fitWithImdb.size()==numOfQues) {return new ResponseEntity<>(fitWithImdb, HttpStatus.OK);}
+            else if (fitWithImdb.size()!=0 && fitWithImdb.size()<numOfQues) {
+                List<Movies> allMovies = new ArrayList<>();
+                int numberOfFitMovies = fitWithImdb.size();
+
+                for (Movies movies : fitWithImdb){
+                    allMovies.add(movies);
+                }
+                int numberOfHigherImdb = numOfQues-numberOfFitMovies;
+                for (Movies movies : higherImdb){
+                    if (numberOfHigherImdb!=0) {
+                        allMovies.add(movies);
+                        --numberOfHigherImdb;
+                    }
+                }
+                return new ResponseEntity<>(allMovies, HttpStatus.OK);
+            }
+            else {
+                return new ResponseEntity<>(higherImdb, HttpStatus.OK);
+            }
+        }catch (Exception e){
             e.printStackTrace();
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
@@ -80,4 +123,12 @@ public class MovieService {
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
-  }
+    public ResponseEntity<List<Movies>> findAll() {
+        try {
+            return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+}

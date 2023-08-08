@@ -40,4 +40,8 @@ public class MoviesController {
     public ResponseEntity<List<Movies>> getByReleaseDate(@PathVariable int date){
         return service.findByReleaseDate(date);
     }
+    @GetMapping("all")
+    public ResponseEntity<List<Movies>> getAllMovies(){
+       return service.findAll();
+    }
 }

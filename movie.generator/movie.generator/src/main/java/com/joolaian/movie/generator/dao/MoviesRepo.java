@@ -9,10 +9,14 @@ import java.util.List;
 @Repository
 public interface MoviesRepo extends JpaRepository<Movies, Integer> {
     List<Movies> findByCategory(String category);
-    @Query(value ="SELECT * FROM movies q Where q.imdb>= :imdb ORDER BY RAND() LIMIT :numOfQues",nativeQuery = true)
+    @Query(value ="SELECT * FROM movies q Where q.imdb= :imdb ORDER BY RAND() LIMIT :numOfQues",nativeQuery = true)
     List<Movies> findByScaleAndLimitedByN(double imdb, int numOfQues);
-    @Query(value ="SELECT * FROM movies q Where q.category= :category AND q.imdb>= :imdb ORDER BY RAND() LIMIT :numOfQues",nativeQuery = true)
+    @Query(value ="SELECT * FROM movies q Where q.imdb> :imdb ORDER BY q.imdb ASC LIMIT :numOfQues",nativeQuery = true)
+    List<Movies> findByHigherScaleAndLimitedByN(double imdb, int numOfQues);
+    @Query(value ="SELECT * FROM movies q Where q.category= :category AND q.imdb= :imdb ORDER BY RAND() LIMIT :numOfQues",nativeQuery = true)
     List<Movies> findByScaleAndCategory(String category, double imdb, int numOfQues);
+    @Query(value ="SELECT * FROM movies q Where q.category= :category AND q.imdb> :imdb ORDER BY q.imdb ASC LIMIT :numOfQues",nativeQuery = true)
+    List<Movies> findByHigherScaleAndCategory(String category, double imdb, int numOfQues);
     @Query(value = "SELECT * FROM movies ORDER BY RAND() LIMIT :number", nativeQuery = true)
     List<Movies> findRandomMovies(int number);
     List<Movies> findByLength(int len);
@@ -21,4 +25,5 @@ public interface MoviesRepo extends JpaRepository<Movies, Integer> {
     @Query(value = "SELECT * FROM movies q WHERE q.movie_name LIKE (%:name%)", nativeQuery = true)
     List<Movies> findByConsistingName(String name);
     List<Movies> findByDate(int date);
+
 }
