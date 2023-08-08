@@ -1,7 +1,7 @@
 # movie-generator-with-microservices
-it doesnt support all requirements for microservices
+it doesn't support all requirements for microservices
 
-📹 this is a movie generator app, which would help you to find your proper movie!
+📹 this is a movie generator app, which would help you find your proper movie!
 
 ## What I used 🍃 
 
@@ -22,13 +22,13 @@ it doesnt support all requirements for microservices
  will know all the client applications running on each port and IP address.
 
 💡i also added API gateway which sits between the client and the microservices.
- i also registered it to Eureka server.
+ I also registered it to Eureka server.
 
-💡so the request will go from user to api gateway and then it will manage the user requests
+💡so the request will go from user to api gateway, and then it will manage the user requests
 and send them to a proper microservice.
 finally we will return the data.
 
-💡the user DB is seperated from movies DB
+💡the user DB is separated from movies DB
 
 ## Features 🍃 
 1: get movie by release date🌟
@@ -57,6 +57,6 @@ finally we will return the data.
 
 ## upcoming features
 
-🖋 i will add spring security and docker
+🖋 I will add spring security and docker
 
 
