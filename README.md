@@ -62,6 +62,7 @@ but the number of movies weren't equal to user request, first we return movies w
 
 ## upcoming features
 
-🖋 I will add spring security and docker
+🖋 add spring security
+🖋 add docker
 
 
