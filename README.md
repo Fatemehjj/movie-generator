@@ -18,7 +18,7 @@ it doesn't support all requirements for microservices
  MySQL as my DB
 
  ## Explain the  Architecture 🍃 
-💡 Every microservice will be registered into the Eureka server and Eureka server
+💡 Every microservice will be registered to Eureka server and Eureka server
  will know all the client applications running on each port and IP address.
 
 💡i also added API gateway which sits between the client and the microservices.
